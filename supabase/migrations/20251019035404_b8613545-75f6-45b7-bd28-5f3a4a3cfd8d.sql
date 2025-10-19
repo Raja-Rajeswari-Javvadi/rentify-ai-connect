@@ -39,18 +39,19 @@ CREATE TABLE public.properties (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   owner_id UUID NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE,
   title TEXT NOT NULL,
-  description TEXT,
-  address TEXT NOT NULL,
-  latitude DECIMAL(10, 8),
-  longitude DECIMAL(11, 8),
-  house_type house_type NOT NULL,
-  bedrooms INTEGER NOT NULL,
-  rent_per_month DECIMAL(10, 2) NOT NULL,
-  has_water_facility BOOLEAN DEFAULT FALSE,
-  meter_type TEXT,
-  is_available BOOLEAN DEFAULT TRUE,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+  description TEXT,  -- Property description (optional)
+  address TEXT NOT NULL,  -- Property address (required)
+  latitude DECIMAL(10, 8),  -- Latitude for geolocation
+  longitude DECIMAL(11, 8),  -- Longitude for geolocation
+  house_type house_type NOT NULL,  -- Enum type for house type (e.g., 1BHK, Studio, etc.)
+  bedrooms INTEGER NOT NULL,  -- Number of bedrooms
+  rent_per_month DECIMAL(10, 2) NOT NULL,  -- Rent price per month
+  has_water_facility BOOLEAN DEFAULT FALSE,  -- Boolean flag for water facility
+  meter_type TEXT,  -- Meter type (e.g., Electric, Gas)
+  image_url TEXT,  -- URL for the property image
+  is_available BOOLEAN DEFAULT TRUE,  -- Property availability (True/False)
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),  -- Timestamp for record creation
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()  -- Timestamp for last update
 );
 
 -- Enable RLS on properties

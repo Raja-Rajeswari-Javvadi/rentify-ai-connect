@@ -86,100 +86,104 @@ export type Database = {
         }
         Relationships: []
       }
-      properties: {
-        Row: {
-          address: string
-          bedrooms: number
-          created_at: string | null
-          description: string | null
-          has_water_facility: boolean | null
-          house_type: Database["public"]["Enums"]["house_type"]
-          id: string
-          is_available: boolean | null
-          latitude: number | null
-          longitude: number | null
-          meter_type: string | null
-          owner_id: string
-          rent_per_month: number
-          title: string
-          updated_at: string | null
+    Enums: {
+      house_type: "1BHK" | "2BHK" | "3BHK" | "4BHK" | "Studio" | "Villa";
+    };
+    properties: {
+      Row: {
+        address: string;                  // Address of the property
+        bedrooms: number;                 // Number of bedrooms in the property
+        created_at: string | null;        // Timestamp when the property was created (nullable)
+        description: string | null;       // Property description (nullable)
+        has_water_facility: boolean | null; // Indicates if the property has water facility
+        house_type: Database["public"]["Enums"]["house_type"]; // Type of the house (from the Enum)
+        id: string;                       // Unique ID for the property (UUID)
+        is_available: boolean | null;     // Whether the property is available or not
+        latitude: number | null;          // Latitude of the property (nullable)
+        longitude: number | null;         // Longitude of the property (nullable)
+        meter_type: string | null;        // Type of meter (nullable)
+        owner_id: string;                 // ID of the property owner (foreign key)
+        rent_per_month: number;           // Monthly rent of the property
+        title: string;                    // Title of the property
+        updated_at: string | null;        // Timestamp of the last update (nullable)
+      };
+      Insert: {
+        address: string;                    // Address of the property
+        bedrooms: number;                   // Number of bedrooms
+        created_at?: string | null;         // Optional: If provided, when the property is created
+        description?: string | null;        // Optional description
+        has_water_facility?: boolean | null; // Optional water facility info
+        house_type: Database["public"]["Enums"]["house_type"]; // Type of house (from enum)
+        id?: string;                        // Optional: ID, will auto-generate if not provided
+        is_available?: boolean | null;      // Optional: availability status
+        latitude?: number | null;           // Optional: latitude
+        longitude?: number | null;          // Optional: longitude
+        meter_type?: string | null;         // Optional: meter type
+        owner_id: string;                   // The ID of the owner (required)
+        rent_per_month: number;             // Rent price per month
+        title: string;                      // Property title
+        updated_at?: string | null;         // Optional: update timestamp
+      };
+      Update: {
+        address?: string;                    // Optional address
+        bedrooms?: number;                   // Optional bedrooms count
+        created_at?: string | null;          // Optional creation timestamp
+        description?: string | null;         // Optional description
+        has_water_facility?: boolean | null; // Optional water facility info
+        house_type?: Database["public"]["Enums"]["house_type"]; // Optional house type (from enum)
+        id?: string;                         // Optional ID (should be provided when updating)
+        is_available?: boolean | null;       // Optional availability
+        latitude?: number | null;            // Optional latitude
+        longitude?: number | null;           // Optional longitude
+        meter_type?: string | null;          // Optional meter type
+        owner_id?: string;                   // Optional: owner ID (should be provided when updating)
+        rent_per_month?: number;             // Optional rent price
+        title?: string;                      // Optional title
+        updated_at?: string | null;          // Optional update timestamp
+      };
+      Relationships: [
+        {
+          foreignKeyName: "properties_owner_id_fkey";
+          columns: ["owner_id"];
+          isOneToOne: false;
+          referencedRelation: "profiles";
+          referencedColumns: ["id"];
         }
-        Insert: {
-          address: string
-          bedrooms: number
-          created_at?: string | null
-          description?: string | null
-          has_water_facility?: boolean | null
-          house_type: Database["public"]["Enums"]["house_type"]
-          id?: string
-          is_available?: boolean | null
-          latitude?: number | null
-          longitude?: number | null
-          meter_type?: string | null
-          owner_id: string
-          rent_per_month: number
-          title: string
-          updated_at?: string | null
+      ];
+    };
+    property_images: {
+      Row: {
+        created_at: string | null;         // Timestamp when the image was uploaded (nullable)
+        id: string;                        // Unique ID for the image (UUID)
+        image_url: string;                 // URL to the image
+        is_primary: boolean | null;        // Whether this image is the primary image
+        property_id: string;               // ID of the associated property (foreign key)
+      };
+      Insert: {
+        created_at?: string | null;         // Optional: If provided, when the image is uploaded
+        id?: string;                        // Optional: Image ID, will auto-generate if not provided
+        image_url: string;                  // URL of the image (required)
+        is_primary?: boolean | null;        // Optional: Whether this image is the primary image
+        property_id: string;                // The ID of the associated property (required)
+      };
+      Update: {
+        created_at?: string | null;         // Optional: upload timestamp
+        id?: string;                        // Optional: Image ID (should be provided when updating)
+        image_url?: string;                 // Optional: New image URL
+        is_primary?: boolean | null;        // Optional: Whether this image should be the primary one
+        property_id?: string;               // Optional: Property ID (should be provided when updating)
+      };
+      Relationships: [
+        {
+          foreignKeyName: "property_images_property_id_fkey";
+          columns: ["property_id"];
+          isOneToOne: false;
+          referencedRelation: "properties";
+          referencedColumns: ["id"];
         }
-        Update: {
-          address?: string
-          bedrooms?: number
-          created_at?: string | null
-          description?: string | null
-          has_water_facility?: boolean | null
-          house_type?: Database["public"]["Enums"]["house_type"]
-          id?: string
-          is_available?: boolean | null
-          latitude?: number | null
-          longitude?: number | null
-          meter_type?: string | null
-          owner_id?: string
-          rent_per_month?: number
-          title?: string
-          updated_at?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "properties_owner_id_fkey"
-            columns: ["owner_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      property_images: {
-        Row: {
-          created_at: string | null
-          id: string
-          image_url: string
-          is_primary: boolean | null
-          property_id: string
-        }
-        Insert: {
-          created_at?: string | null
-          id?: string
-          image_url: string
-          is_primary?: boolean | null
-          property_id: string
-        }
-        Update: {
-          created_at?: string | null
-          id?: string
-          image_url?: string
-          is_primary?: boolean | null
-          property_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "property_images_property_id_fkey"
-            columns: ["property_id"]
-            isOneToOne: false
-            referencedRelation: "properties"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
+      ];
+    };
+
     }
     Views: {
       [_ in never]: never
