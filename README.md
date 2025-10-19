@@ -126,10 +126,4 @@ Submit a pull request
 
 This project is open-source and available under the MIT License.
 
-💡 Acknowledgments
-
-Built with ❤️ using Lovable AI
-
-Special thanks to OpenAI for development support and ideation
-
-Designed and developed by Rajeswari Javvadi
+Designed and developed by Raja Rajeswari Javvadi
