@@ -1,73 +1,135 @@
-# Welcome to your Lovable project
+🏠 RentalFinder – AI-Powered Rental Discovery Platform
 
-## Project info
+A smart, modern web platform that connects house owners and rental seekers with ease. Built using AI-assisted development, RentalFinder simplifies the rental process through intuitive design, advanced filters, and cloud-powered data management.
 
-**URL**: https://lovable.dev/projects/2f4d6d4c-745f-49b6-842b-85e2b51272ef
+🌟 Overview
 
-## How can I edit this code?
+RentalFinder (Rentify AI Connect) is a full-stack web application that enables:
 
-There are several ways of editing your application.
+🏘️ Owners to upload and manage their rental property listings.
 
-**Use Lovable**
+👩‍💼 Rental seekers to browse, search, and connect with owners directly.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2f4d6d4c-745f-49b6-842b-85e2b51272ef) and start prompting.
+This project aims to make renting homes simpler, faster, and more transparent — with a clean and responsive UI designed using modern tools and AI-generated components.
 
-Changes made via Lovable will be committed automatically to this repo.
+🚀 Features
+👤 Role-Based Access
 
-**Use your preferred IDE**
+House Owners:
+Upload property details, images, and essential information like:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Address (with Google Maps integration)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Water facility availability
 
-Follow these steps:
+Current meter details
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+House type (1BHK, 2BHK, etc.)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Rent per month
 
-# Step 3: Install the necessary dependencies.
-npm i
+Rental Finders:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Browse and search houses by location, budget, or house type.
+
+View detailed house cards with photos and map previews.
+
+Contact or send booking requests to owners.
+
+🧩 Additional Features
+
+Interactive Google Maps integration for property locations.
+
+Image uploads for houses.
+
+Search bar and filters for easy discovery.
+
+Clean, responsive UI with Tailwind CSS and subtle animations.
+
+Authentication for secure user access (Firebase/Supabase).
+
+🛠️ Tech Stack
+Category	Technologies Used
+Frontend	React + Vite + Tailwind CSS + Framer Motion
+Backend / Database	Firebase / Supabase (for authentication, data, and storage)
+APIs	Google Maps API
+Hosting	Vercel / Netlify / Firebase Hosting
+AI Builder	Lovable AI (for initial app generation and design)
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/Raja-Rajeswari-Javvadi/rentify-ai-connect.git
+cd rentify-ai-connect
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Run the App
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+4️⃣ Open in Browser
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Visit 👉 http://localhost:5173
 
-**Use GitHub Codespaces**
+🔐 Environment Setup
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Create a .env file in the project root with your configuration:
 
-## What technologies are used for this project?
+For Firebase:
 
-This project is built with:
+VITE_FIREBASE_API_KEY=your_key
+VITE_FIREBASE_AUTH_DOMAIN=your_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
 
-## How can I deploy this project?
+For Supabase:
 
-Simply open [Lovable](https://lovable.dev/projects/2f4d6d4c-745f-49b6-842b-85e2b51272ef) and click on Share -> Publish.
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_anon_key
 
-## Can I connect a custom domain to my Lovable project?
+🎨 Design Highlights
 
-Yes, you can!
+Elegant navigation bar and hero section for intuitive navigation.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Modern color palette: teal, navy blue, white, and soft orange.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Glassmorphism-inspired cards with hover animations.
+
+Fully responsive layout optimized for mobile and desktop.
+
+🧠 Future Enhancements
+
+AI-based rental recommendations (suggesting houses based on user preferences).
+
+Chat system between owners and renters.
+
+Booking management system with status tracking.
+
+Admin dashboard for listing and user management.
+
+Integration with payment gateways for deposits or booking fees.
+
+🤝 Contributing
+
+Contributions are welcome!
+If you’d like to improve RentalFinder, please:
+
+Fork the repo 🍴
+
+Create a feature branch
+
+Submit a pull request
+
+📜 License
+
+This project is open-source and available under the MIT License.
+
+💡 Acknowledgments
+
+Built with ❤️ using Lovable AI
+
+Special thanks to OpenAI for development support and ideation
+
+Designed and developed by Rajeswari Javvadi
