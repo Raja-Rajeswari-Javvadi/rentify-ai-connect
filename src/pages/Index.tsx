@@ -249,6 +249,106 @@ const Index = () => {
         </div>
       </section>
 
+      {/* About Section */}
+      <section id="about" className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">About RentalFinder</h2>
+            <div className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground">
+              <p>
+                RentalFinder is a modern platform that connects property owners with people looking for their perfect rental home. 
+                We believe finding a home should be simple, transparent, and stress-free.
+              </p>
+              <p>
+                Our platform enables direct communication between owners and renters, eliminating unnecessary middlemen 
+                and providing you with the best rental experience possible. With advanced search filters, verified listings, 
+                and secure authentication, we ensure both parties can connect with confidence.
+              </p>
+              <p className="font-semibold text-foreground">
+                Whether you're looking for a cozy studio, a family home, or listing your property, 
+                RentalFinder is here to make the process seamless.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-muted/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Get In Touch</h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Have questions? We'd love to hear from you.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="glass-card p-8 md:p-12 rounded-2xl shadow-lg"
+          >
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold mb-4">Contact Information</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="h-6 w-6 text-primary mt-1" />
+                    <div>
+                      <p className="font-medium">Address</p>
+                      <p className="text-muted-foreground">123 Real Estate Ave, City, State 12345</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Users className="h-6 w-6 text-primary mt-1" />
+                    <div>
+                      <p className="font-medium">Email</p>
+                      <p className="text-muted-foreground">support@rentalfinder.com</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Home className="h-6 w-6 text-primary mt-1" />
+                    <div>
+                      <p className="font-medium">Phone</p>
+                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold mb-4">Quick Message</h3>
+                <p className="text-muted-foreground mb-6">
+                  Create an account to send us a message directly through the platform, 
+                  or reach out via email for general inquiries.
+                </p>
+                <Button
+                  onClick={() => navigate("/auth")}
+                  className="w-full"
+                  size="lg"
+                >
+                  Sign Up to Contact Us
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-gradient-accent relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-overlay opacity-50" />

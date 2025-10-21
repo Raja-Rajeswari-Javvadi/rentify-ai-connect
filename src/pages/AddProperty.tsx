@@ -246,7 +246,6 @@ const AddOrUpdateProperty = () => {
               <div>
                 <Label htmlFor="houseType">House Type *</Label>
                 <Select
-                  id="houseType"
                   value={formData.houseType}
                   onValueChange={(value) => setFormData({ ...formData, houseType: value })}
                   required
@@ -305,7 +304,6 @@ const AddOrUpdateProperty = () => {
               <div>
                 <Label htmlFor="meterType">Meter Type *</Label>
                 <Select
-                  id="meterType"
                   value={formData.meterType}
                   onValueChange={(value) => setFormData({ ...formData, meterType: value })}
                   required
