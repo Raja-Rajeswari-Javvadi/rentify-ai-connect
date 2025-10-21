@@ -1,4 +1,4 @@
-🏠 RentalFinder – AI-Powered Rental Discovery Platform
+🏠 RentalFinder – AI-Powered Rental Discovery Platform  -- Live Demo -- https://rentify-ai-connect.netlify.app/
 
 A smart, modern web platform that connects house owners and rental seekers with ease. Built using AI-assisted development, RentalFinder simplifies the rental process through intuitive design, advanced filters, and cloud-powered data management.
 
