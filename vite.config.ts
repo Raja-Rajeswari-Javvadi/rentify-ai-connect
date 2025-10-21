@@ -9,6 +9,10 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 5173,
   },
+  preview: {
+    // Allow requests from your Render backend
+    allowedHosts: ["rentify-ai-connect.onrender.com"]
+  },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
