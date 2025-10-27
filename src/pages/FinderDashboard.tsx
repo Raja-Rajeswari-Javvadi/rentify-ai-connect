@@ -6,10 +6,12 @@ import { Card } from "@/components/ui/card";
 import { LogOut } from "lucide-react";
 import { toast } from "sonner";
 import type { User } from "@supabase/supabase-js";
+import PropertyCard from "@/components/PropertyCard";
 
 const FinderDashboard = () => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [properties, setProperties] = useState<any[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -49,6 +51,27 @@ const FinderDashboard = () => {
     return () => subscription.unsubscribe();
   }, [navigate]);
 
+  useEffect(() => {
+    const fetchProperties = async () => {
+      const { data, error } = await supabase
+        .from('properties')
+        .select('*')
+        .eq('is_available', true);
+
+      if (error) {
+        console.error("Error fetching properties:", error);
+        toast.error("Failed to load properties");
+        return;
+      }
+
+      setProperties(data || []);
+    };
+
+    if (user) {
+      fetchProperties();
+    }
+  }, [user]);
+
   const handleLogout = async () => {
     await supabase.auth.signOut();
     navigate("/auth");
@@ -83,11 +106,29 @@ const FinderDashboard = () => {
           <p className="text-muted-foreground mt-1">Browse available properties</p>
         </div>
 
-        <Card className="p-8 text-center">
-          <p className="text-muted-foreground">
-            No properties available yet. Check back soon!
-          </p>
-        </Card>
+        {properties.length === 0 ? (
+          <Card className="p-8 text-center">
+            <p className="text-muted-foreground">
+              No properties available yet. Check back soon!
+            </p>
+          </Card>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {properties.map((property, index) => (
+              <PropertyCard
+                key={property.id}
+                title={property.title}
+                address={property.address}
+                bedrooms={property.bedrooms}
+                rent={property.rent_per_month}
+                imageUrl={property.image_url}
+                hasWater={property.has_water_facility}
+                houseType={property.house_type}
+                index={index}
+              />
+            ))}
+          </div>
+        )}
       </main>
     </div>
   );
