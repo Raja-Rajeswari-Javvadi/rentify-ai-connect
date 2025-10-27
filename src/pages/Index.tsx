@@ -317,14 +317,14 @@ const Index = () => {
                     <Users className="h-6 w-6 text-primary mt-1" />
                     <div>
                       <p className="font-medium">Email</p>
-                      <p className="text-muted-foreground">support@rentalfinder.com</p>
+                      <p className="text-muted-foreground">rajijavvadi1630@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Home className="h-6 w-6 text-primary mt-1" />
                     <div>
                       <p className="font-medium">Phone</p>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-muted-foreground">9912577123</p>
                     </div>
                   </div>
                 </div>

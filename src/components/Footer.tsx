@@ -24,10 +24,10 @@ const Footer = () => {
               <a href="#" className="hover:text-accent transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-accent transition-colors">
+              <a href="https://www.instagram.com/raji_javvadi3/" className="hover:text-accent transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-accent transition-colors">
+              <a href="https://www.linkedin.com/in/raja-rajeswari-javvadi-130520280/" className="hover:text-accent transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -97,11 +97,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-5 w-5 flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>9912577123</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5 flex-shrink-0" />
-                <span>support@rentalfinder.com</span>
+                <span>rajeswari.javvadi@sasi.ac.in</span>
               </li>
             </ul>
           </div>
